@@ -1,0 +1,23 @@
+header {
+  text-align: center;
+}
+body {
+  font-family: 'segoe-ui', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  height: 100%;
+  width: 100vw;
+}
+
+main {
+  margin: 0 auto;
+  padding: 5%;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.8rem;
+}

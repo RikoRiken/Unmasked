@@ -1,0 +1,61 @@
+<!-- 
+     _   _                           _            _ 
+    | | | |_ __  _ __ ___   __ _ ___| | _____  __| |
+    | | | | '_ \| '_ ` _ \ / _` / __| |/ / _ \/ _` |
+    | |_| | | | | | | | | | (_| \__ \   <  __/ (_| |
+     \___/|_| |_|_| |_| |_|\__,_|___/_|\_\___|\__,_|
+                                                
+Unmasked, a simple web application to discover your fingerprint on websites. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="./styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Unmasked – Browser Fingerprint Explorer</title>
+</head>
+<body>
+
+  <header>
+    <h1>🕵️ Unmasked</h1>
+    <p>See what your browser silently reveals about you.</p>
+  </header>
+
+  <main>
+    <section id="basic-info">
+      <h2>📋 Basic Information</h2>
+      <ul>
+        <li><strong>IP Address:</strong> <span id="ip-address">Loading...</span></li>
+        <li><strong>User-Agent:</strong> <span id="user-agent">Loading...</span></li>
+        <li><strong>Language:</strong> <span id="language">Loading...</span></li>
+        <li><strong>Time Zone:</strong> <span id="timezone">Loading...</span></li>
+        <li><strong>Platform:</strong> <span id="platform">Loading...</span></li>
+        <li><strong>Screen Resolution:</strong> <span id="screen">Loading...</span></li>
+      </ul>
+    </section>
+
+    <section id="fingerprint">
+      <h2>🔍 Fingerprinting Details</h2>
+      <ul>
+        <li><strong>Canvas Fingerprint:</strong> <span id="canvas-fingerprint">Loading...</span></li>
+        <li><strong>WebGL Vendor:</strong> <span id="webgl-vendor">Loading...</span></li>
+        <li><strong>WebGL Renderer:</strong> <span id="webgl-renderer">Loading...</span></li>
+        <li><strong>Fonts Detected:</strong> <span id="fonts">Loading...</span></li>
+        <li><strong>Plugins:</strong> <span id="plugins">Loading...</span></li>
+      </ul>
+    </section>
+
+    <section id="result">
+      <h2>🧠 Uniqueness Score</h2>
+      <p><strong>Estimated uniqueness:</strong> <span id="uniqueness-score">Calculating...</span></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Made with 🛡️ by <a href="https://github.com/RikoRiken" target="_blank">RikoRiken</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
