@@ -18,42 +18,70 @@ Unmasked, a simple web application to discover your fingerprint on websites. -->
 <body>
 
   <header>
-    <h1>🕵️ Unmasked</h1>
-    <p>See what your browser silently reveals about you.</p>
+    <h1>
+        <img src="../assets/Unmasked_logo.png" alt="Unmasked Logo" width="256px">
+    </h1>
   </header>
 
   <main>
     <section id="basic-info">
-      <h2>📋 Basic Information</h2>
-      <ul>
-        <li><strong>IP Address:</strong> <span id="ip-address">Loading...</span></li>
-        <li><strong>User-Agent:</strong> <span id="user-agent">Loading...</span></li>
-        <li><strong>Language:</strong> <span id="language">Loading...</span></li>
-        <li><strong>Time Zone:</strong> <span id="timezone">Loading...</span></li>
-        <li><strong>Platform:</strong> <span id="platform">Loading...</span></li>
-        <li><strong>Screen Resolution:</strong> <span id="screen">Loading...</span></li>
-      </ul>
-    </section>
+        <h2>📋 Basic Informations</h2>
+        <div class="info-grid-horizontal">
+            <div class="info-box">
+                <div class="label">IP Address</div>
+                <div id="ip-address">Loading...</div>
+            </div>
+            <div class="info-box">
+                <div class="label">User-Agent</div>
+                <div id="user-agent">Loading...</div>
+            </div>
+            <div class="info-box">
+                <div class="label">Language</div>
+                <div id="language">Loading...</div>
+            </div>
+            <div class="info-box">
+                <div class="label">Time Zone</div>
+                <div id="timezone">Loading...</div>
+            </div>
+        </div>
+        </section>
 
     <section id="fingerprint">
       <h2>🔍 Fingerprinting Details</h2>
-      <ul>
-        <li><strong>Canvas Fingerprint:</strong> <span id="canvas-fingerprint">Loading...</span></li>
-        <li><strong>WebGL Vendor:</strong> <span id="webgl-vendor">Loading...</span></li>
-        <li><strong>WebGL Renderer:</strong> <span id="webgl-renderer">Loading...</span></li>
-        <li><strong>Fonts Detected:</strong> <span id="fonts">Loading...</span></li>
-        <li><strong>Plugins:</strong> <span id="plugins">Loading...</span></li>
-      </ul>
+      <div class="info-grid-horizontal">
+        <div class="info-box">
+            <div class="label">Canvas Fingerprint</div>
+            <div id="canvas-fingerprint">Loading...</div>
+        </div>
+        <div class="info-box">
+            <div class="label">WebGL Vendor</div>
+            <div id="webgl-vendor">Loading...</div>
+        </div>
+        <div class="info-box">
+            <div class="label">WebGL Renderer</div>
+            <div id="webgl-renderer">Loading...</div>
+        </div>
+      </div>
+      <div class="info-grid-horizontal">
+        <div class="info-box">
+            <div class="label">Fonts Detected</div>
+            <div id="fonts">Loading...</div>
+        </div>
+        <div class="info-box">
+            <div class="label">Plugins</div>
+            <div id="plugins">Loading...</div>
+        </div>
+      </div>
     </section>
 
     <section id="result">
       <h2>🧠 Uniqueness Score</h2>
-      <p><strong>Estimated uniqueness:</strong> <span id="uniqueness-score">Calculating...</span></p>
+      <p><span id="uniqueness-score" style="font-size: 1.2rem; font-weight: 500; color: #b1a1ed;">Calculating...</span></p>
     </section>
   </main>
 
   <footer>
-    <p>Made with 🛡️ by <a href="https://github.com/RikoRiken" target="_blank">RikoRiken</a></p>
+    <p>Made with 🛡️ by <a href="https://github.com/RikoRiken" target="_blank" rel="noopener noreferrer">RikoRiken</a></p>
   </footer>
 
   <script src="script.js"></script>
