@@ -12,7 +12,7 @@ The goal: raise awareness about passive tracking and show how unique (and tracea
 <p align="center">
   <a href="#description">Description</a> •
   <a href="#features">Features</a> •
-  <a href="#installation">Installation</a> •
+  <a href="#utilisation">Utilisation</a> •
   <a href="#demonstration">Demonstration</a>
 </p>
 
