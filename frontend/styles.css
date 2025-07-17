@@ -39,12 +39,11 @@ button {
   cursor: pointer;
   border-radius: 8px;
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 button:hover {
   background-color: #9e8ce2;
-  font-weight: 700;
 }
 
 h2 {
