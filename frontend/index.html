@@ -15,12 +15,18 @@ Unmasked, a simple web application to discover your fingerprint on websites. -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Unmasked – Browser Fingerprint Explorer</title>
 </head>
+
 <body>
 
   <header>
-    <h1>
-        <img src="../assets/Unmasked_logo.png" alt="Unmasked Logo" width="256px">
-    </h1>
+    <div class="navbar">
+        <div>
+            <img src="../assets/Unmasked_logo.png" alt="Unmasked Logo" width="192px">
+        </div>
+        <div>
+            <button id="start-button" class="button">Launch the scan</button>
+        </div>
+    </div>
   </header>
 
   <main>
@@ -29,50 +35,52 @@ Unmasked, a simple web application to discover your fingerprint on websites. -->
         <div class="info-grid-horizontal">
             <div class="info-box">
                 <div class="label">IP Address</div>
-                <div id="ip-address">Loading...</div>
+                <div class="result" id="ip-address">Loading...</div>
             </div>
             <div class="info-box">
                 <div class="label">User-Agent</div>
-                <div id="user-agent">Loading...</div>
+                <div class="result" id="user-agent">Loading...</div>
             </div>
             <div class="info-box">
                 <div class="label">Language</div>
-                <div id="language">Loading...</div>
+                <div class="result" id="language">Loading...</div>
             </div>
             <div class="info-box">
                 <div class="label">Time Zone</div>
-                <div id="timezone">Loading...</div>
+                <div class="result" id="timezone">Loading...</div>
             </div>
         </div>
         </section>
 
     <section id="fingerprint">
-      <h2>🔍 Fingerprinting Details</h2>
-      <div class="info-grid-horizontal">
-        <div class="info-box">
-            <div class="label">Canvas Fingerprint</div>
-            <div id="canvas-fingerprint">Loading...</div>
+        <h2>🔍 Fingerprinting Details</h2>
+
+        <div class="info-grid-horizontal">
+            <div class="info-box">
+                <div class="label">Canvas Fingerprint</div>
+                <div class="result" id="canvas-fingerprint">Loading...</div>
+            </div>
+            <div class="info-box">
+                <div class="label">WebGL Vendor</div>
+                <div class="result" id="webgl-vendor">Loading...</div>
+            </div>
+            <div class="info-box">
+                <div class="label">WebGL Renderer</div>
+                <div class="result" id="webgl-renderer">Loading...</div>
+            </div>
         </div>
-        <div class="info-box">
-            <div class="label">WebGL Vendor</div>
-            <div id="webgl-vendor">Loading...</div>
+
+        <div class="info-grid-horizontal">
+            <div class="info-box">
+                <div class="label">Fonts Detected</div>
+                <div class="result" id="fonts">Loading...</div>
+            </div>
+            <div class="info-box">
+                <div class="label">Plugins</div>
+                <div class="result" id="plugins">Loading...</div>
+            </div>
         </div>
-        <div class="info-box">
-            <div class="label">WebGL Renderer</div>
-            <div id="webgl-renderer">Loading...</div>
-        </div>
-      </div>
-      <div class="info-grid-horizontal">
-        <div class="info-box">
-            <div class="label">Fonts Detected</div>
-            <div id="fonts">Loading...</div>
-        </div>
-        <div class="info-box">
-            <div class="label">Plugins</div>
-            <div id="plugins">Loading...</div>
-        </div>
-      </div>
-    </section>
+        </section>
 
     <section id="result">
       <h2>🧠 Uniqueness Score</h2>
@@ -81,9 +89,10 @@ Unmasked, a simple web application to discover your fingerprint on websites. -->
   </main>
 
   <footer>
-    <p>Made with 🛡️ by <a href="https://github.com/RikoRiken" target="_blank" rel="noopener noreferrer">RikoRiken</a></p>
+    <p>Made with 🛡️ by <a href="https://github.com/RikoRiken" style="color: #333;" target="_blank" rel="noopener noreferrer">RikoRiken</a></p>
   </footer>
 
   <script src="script.js"></script>
+  
 </body>
 </html>
