@@ -9,6 +9,13 @@ Unmasked is a lightweight web tool that reveals what your browser silently expos
 The goal: raise awareness about passive tracking and show how unique (and traceable) your digital identity really is.
 </p>
 
+<br>
+
+<p align="center">
+  <img src="./assets/unmasked_readme-button.png" href="https://google.com" width="192px">
+
+<br>
+
 <p align="center">
   <a href="#description">Description</a> •
   <a href="#features">Features</a> •
@@ -38,7 +45,7 @@ Originally created as a learning project to explore JavaScript, browser APIs, an
 <br>
 <br>
 
-## Installation
+## Utilisation
 
 <br>
 <br>
