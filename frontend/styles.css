@@ -77,12 +77,13 @@ section {
 .info-box .label {
   font-weight: bold;
   margin-bottom: 0.5rem;
-  color: #333;
+  color: #9e8ce2;
 }
 
 .info-box .result {
   font-size: 0.9rem;
-  color: #b1a1ed;
+  color: #333;
+  margin-top: 10%;
 }
 
 main {
