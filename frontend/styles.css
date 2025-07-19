@@ -50,11 +50,11 @@ h2 {
   color: #333;
   margin-top: 1rem;
   text-align: center;
+  padding: 1rem;
 }
 
 section {
   padding-bottom: 3vh;
-  padding-top: 3vh;
   text-align: center;
 }
 
@@ -83,7 +83,7 @@ section {
 .info-box .result {
   font-size: 0.9rem;
   color: #333;
-  margin-top: 10%;
+  margin-top: 3vh;
 }
 
 main {
