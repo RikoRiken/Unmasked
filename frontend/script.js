@@ -15,6 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
         getLanguage();
         getTimezone();
         await getIPAddress();
+        getHardwareConcurrency();
+        getDeviceMemory();
     });
 });
 
@@ -43,4 +45,14 @@ async function getIPAddress() {
         console.error("Error:", error);
         document.getElementById("ip-address").innerText = "Error";
     }
+}
+
+function getHardwareConcurrency() {
+    const hardwareConcurrency = navigator.hardwareConcurrency || "Not supported";
+    document.getElementById("hardware-concurrency").innerText = hardwareConcurrency + " cores";
+}
+
+function getDeviceMemory() {
+    const deviceMemory = navigator.deviceMemory || "Not supported";
+    document.getElementById("device-memory").innerText = deviceMemory + " GB";
 }
