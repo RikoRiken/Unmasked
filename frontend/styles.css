@@ -46,7 +46,7 @@ button:hover {
   background-color: #9e8ce2;
 }
 
-h2 {
+.h2 {
   color: #333;
   margin-top: 1rem;
   text-align: center;
@@ -76,14 +76,20 @@ section {
 
 .info-box .label {
   font-weight: bold;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.2rem;
   color: #9e8ce2;
 }
 
 .info-box .result {
   font-size: 0.9rem;
   color: #333;
-  margin-top: 3vh;
+  margin-top: 2vh;
+}
+
+.hardware-line {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 main {
