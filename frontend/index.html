@@ -31,15 +31,15 @@ Unmasked, a simple web application to discover your fingerprint on websites. -->
 
   <main>
     <section id="basic-info">
-        <h2>📋 Basic Informations</h2>
+        <div class="h2">
+            <h2>BASIC INFORMATIONS</h2>
+            <p>These details are collected to identify your browser and device.</p>
+        </div>
+
         <div class="info-grid-horizontal">
             <div class="info-box">
                 <div class="label">IP Address</div>
                 <div class="result" id="ip-address">Loading...</div>
-            </div>
-            <div class="info-box">
-                <div class="label">User-Agent</div>
-                <div class="result" id="user-agent">Loading...</div>
             </div>
             <div class="info-box">
                 <div class="label">Language</div>
@@ -50,16 +50,36 @@ Unmasked, a simple web application to discover your fingerprint on websites. -->
                 <div class="result" id="timezone">Loading...</div>
             </div>
         </div>
+
+        <div class="info-grid-horizontal">
+             <div class="info-box">
+                <div class="label">User-Agent</div>
+                <div class="result" id="user-agent">Loading...</div>
+            </div>           
+            <div class="info-box">
+                <div class="label">Device cores & RAM memory</div>
+                <div class="hardware-line">
+                    <div class="result" id="hardware-concurrency">Loading...</div>
+                    <div class="result" id="device-memory">Loading...</div>
+                </div>
+            </div>
+        </div>
+
         </section>
 
     <section id="fingerprint">
-        <h2>🔍 Fingerprinting Details</h2>
+        <div class="h2">
+            <h2>FINGERPRINTING DETAILS</h2>
+            <p>These details are collected to create a unique fingerprint of your browser.</p>
+        </div>
 
         <div class="info-grid-horizontal">
             <div class="info-box">
                 <div class="label">Canvas Fingerprint</div>
                 <div class="result" id="canvas-fingerprint">Loading...</div>
             </div>
+        </div>
+        <div class="info-grid-horizontal">
             <div class="info-box">
                 <div class="label">WebGL Vendor</div>
                 <div class="result" id="webgl-vendor">Loading...</div>
@@ -69,21 +89,10 @@ Unmasked, a simple web application to discover your fingerprint on websites. -->
                 <div class="result" id="webgl-renderer">Loading...</div>
             </div>
         </div>
-
-        <div class="info-grid-horizontal">
-            <div class="info-box">
-                <div class="label">Hardware Concurrency</div>
-                <div class="result" id="hardware-concurrency">Loading...</div>
-            </div>
-            <div class="info-box">
-                <div class="label">Device Memory</div>
-                <div class="result" id="device-memory">Loading...</div>
-            </div>
-        </div>
         </section>
 
     <section id="result">
-      <h2>🧠 Uniqueness Score</h2>
+      <h2>UNIQUENESS SCORE</h2>
       <p><span id="uniqueness-score">Calculating...</span></p>
     </section>
   </main>
