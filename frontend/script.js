@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
         await getIPAddress();
         getHardwareConcurrency();
         getDeviceMemory();
+        await getCanvasFingerprint();
     });
 });
 
@@ -55,4 +56,25 @@ function getHardwareConcurrency() {
 function getDeviceMemory() {
     const deviceMemory = navigator.deviceMemory || "Not supported";
     document.getElementById("device-memory").innerText = deviceMemory + " GB";
+}
+
+async function getCanvasFingerprint() {
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+
+    canvas.width = 200;
+    canvas.height = 50;
+
+    ctx.textBaseline = "top";
+    ctx.font = "16px Arial";
+    ctx.fillStyle = "red";
+    ctx.fillText("Hello fingerprint 👋", 10, 10);
+
+    const dataUrl = canvas.toDataURL();
+
+    const hashBuffer = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(dataUrl));
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+
+    document.getElementById("canvas-fingerprint").innerText = hashHex;
 }
