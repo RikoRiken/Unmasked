@@ -11,13 +11,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const button = document.getElementById("new-scan");
 
     button.addEventListener("click", async () => {
+        await getIPAddress();
         getUserAgent();
         getLanguage();
         getTimezone();
-        await getIPAddress();
         getHardwareConcurrency();
         getDeviceMemory();
         await getCanvasFingerprint();
+        await getWebGLInfo();
     });
 });
 
@@ -77,4 +78,32 @@ async function getCanvasFingerprint() {
     const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
 
     document.getElementById("canvas-fingerprint").innerText = hashHex;
+}
+
+function getWebGLInfo() {
+    const canvas = document.createElement("canvas");
+    canvas.width = 1;
+    canvas.height = 1;
+
+    const gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
+
+    if (!gl) {
+        console.warn("WebGL non supporté sur ce navigateur.");
+        document.getElementById("webgl-vendor").innerText = "Not available";
+        document.getElementById("webgl-renderer").innerText = "Not available";
+        return;
+    }
+
+    const debugInfo = gl.getExtension("WEBGL_debug_renderer_info");
+
+    const vendor = debugInfo
+        ? gl.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL)
+        : "Not available";
+
+    const renderer = debugInfo
+        ? gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL)
+        : "Not available";
+
+    document.getElementById("webgl-vendor").innerText = vendor;
+    document.getElementById("webgl-renderer").innerText = renderer;
 }
