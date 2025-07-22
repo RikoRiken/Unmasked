@@ -36,7 +36,7 @@ header {
   flex-direction: column;
   background-color: #8E7FCB;
   color:#f0f0f0;
-  font-size: 0.8rem;
+  font-size: 0.8 rem;
 }
 
 .navbar {
@@ -185,10 +185,11 @@ main {
 }
 
 #uniqueness-score {
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: #b1a1ed;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffffff;
 }
+
 
 footer {
   text-align: center;
