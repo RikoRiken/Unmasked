@@ -42,8 +42,7 @@ async function getIPAddress() {
     try {
         const response = await fetch("https://api.ipify.org?format=json");
         const data = await response.json();
-        const ip = data.ip;
-        document.getElementById("ip-address").innerText = ip;
+        document.getElementById("ip-address").innerText = data.ip;
     } catch (error) {
         console.error("Error:", error);
         document.getElementById("ip-address").innerText = "Error";
@@ -111,7 +110,11 @@ function getWebGLInfo() {
 
 
 const fingerprintAttributes = [
-    { id: "ip-address", weight: 10 },
+    { 
+        id: "ip-address", 
+        weight: 10,
+        evaluate: evaluateIPAddress
+    },
 
     {
         id: "language",
@@ -130,6 +133,7 @@ const fingerprintAttributes = [
         weight: 15,
         evaluate: evaluateUserAgent
     },
+    
     {
         id: "hardware-concurrency",
         weight: 5,
@@ -154,9 +158,21 @@ const fingerprintAttributes = [
         }
     },
 
-    { id: "canvas-fingerprint", weight: 20 },
-    { id: "webgl-vendor", weight: 10 },
-    { id: "webgl-renderer", weight: 15 },
+    { 
+        id: "canvas-fingerprint", 
+        weight: 20,
+    },
+
+    { 
+        id: "webgl-vendor", 
+        weight: 10,
+        evaluate: evaluateWebGLVendor
+    },
+    { 
+        id: "webgl-renderer", 
+        weight: 15,
+        evaluate: evaluateWebGLRenderer
+    },
 ];
 
 function calculateUniquenessScore() {
@@ -178,7 +194,6 @@ function calculateUniquenessScore() {
 
   return score;
 }
-
 
 function displayScore() {
   const score = calculateUniquenessScore();
@@ -212,7 +227,7 @@ const languageRarityScores = {
   "sv": 0.95   // Swedish
 };
 
-// Score evaluation of language rarity
+// Score evaluation of Language rarity
 function evaluateLanguage(value) {
   if (!value) return 0;
   const langCode = value.slice(0, 2).toLowerCase();
@@ -245,6 +260,7 @@ const timezoneRarityScores = {
   "Pacific/Auckland": 0.99,
 };
 
+// Score evaluation of Timezone rarity
 function evaluateTimezone(value) {
   if (!value) return 0;
   const rarity = timezoneRarityScores[value] || 1.0; // Default to 1.0 if not found
@@ -252,6 +268,7 @@ function evaluateTimezone(value) {
   return rarity * maxWeight;
 }
 
+// Score evaluation of UserAgent rarity : Browser, Browser Version and OS
 function evaluateUserAgent(uaString) {
   if (!uaString) return 0;
 
@@ -350,4 +367,109 @@ function evaluateUserAgent(uaString) {
   const finalScore = combinedRarity * maxWeight;
 
   return Math.min(finalScore, maxWeight);
+}
+
+// Score evaluation of WebGL Vendor
+// Rarity scores based on common usage and market share of graphics vendors
+function evaluateWebGLVendor(value) {
+  if (!value) return 0;
+
+  const vendor = value.toLowerCase();
+
+  // Rarity score (0 = very common, 1 = rare)
+  const rarityScores = {
+    "intel": 0.2,
+    "nvidia": 0.2,
+    "amd": 0.3,
+    "ati": 0.3,
+    "microsoft": 0.4,
+    "apple": 0.5,
+    "qualcomm": 0.6,
+    "arm": 0.6,
+    "mesa": 0.7,
+    "vmware": 0.9,      // virtual machines = rare
+    "parallels": 0.9,   // virtual machines = rare
+    "virtualbox": 0.9,  // virtual machines = rare
+    "unknown": 1.0,     // not detected = very rare
+  };
+
+  // Find a score, otherwise max rarity = 1
+  for (const key in rarityScores) {
+    if (vendor.includes(key)) {
+      return rarityScores[key] * 10;
+    }
+  }
+
+  return 10; // Default to 10 if no match found
+}
+
+// Score evaluation of WebGL Renderer
+// Rarity scores based on common usage and market share of graphics renderers, GPU drivers and software renderers
+function evaluateWebGLRenderer(value) {
+  if (!value) return 0;
+
+  const renderer = value.toLowerCase();
+
+  const rarityScores = [
+    { keyword: "intel", score: 2 },
+    { keyword: "uhd", score: 2 },
+    { keyword: "hd graphics", score: 2 },
+    { keyword: "nvidia", score: 3 },
+    { keyword: "amd", score: 3 },
+    { keyword: "radeon", score: 3 },
+    { keyword: "apple", score: 4 },
+    { keyword: "mesa", score: 6 },
+    { keyword: "llvmpipe", score: 8 },
+    { keyword: "swiftshader", score: 9 },
+    { keyword: "vmware", score: 10 },
+    { keyword: "software", score: 10 },
+    { keyword: "virtualbox", score: 10 },
+    { keyword: "parallels", score: 10 },
+    { keyword: "unknown", score: 10 }
+  ];
+
+  for (const entry of rarityScores) {
+    if (renderer.includes(entry.keyword)) {
+      return entry.score;
+    }
+  }
+
+  return 7; // Rare par défaut si non identifié
+}
+
+// Score evaluation of IP address uniqueness
+// This function evaluates the uniqueness of an IP address based on its type (IPv4, IPv6, private, public, etc.)
+function evaluateIPAddress() {
+  const ip = document.getElementById("ip-address").innerText.trim();
+
+  if (!ip || ip === "Error" || ip === "Not available") return 0;
+
+  // IPv6 (not that used compared to IPv4)
+  if (ip.includes(":")) {
+    return 5;
+  }
+
+  // Known local IPs (private)
+  if (
+    ip.startsWith("192.168.") ||
+    ip.startsWith("10.") ||
+    ip.startsWith("172.16.") || ip.startsWith("172.17.") || ip.startsWith("172.18.") ||
+    ip.startsWith("172.19.") || ip.startsWith("172.20.") || ip.startsWith("172.21.") ||
+    ip.startsWith("172.22.") || ip.startsWith("172.23.") || ip.startsWith("172.24.") ||
+    ip.startsWith("172.25.") || ip.startsWith("172.26.") || ip.startsWith("172.27.") ||
+    ip.startsWith("172.28.") || ip.startsWith("172.29.") || ip.startsWith("172.30.") ||
+    ip.startsWith("172.31.") ||
+    ip.startsWith("127.") || ip === "::1"
+  ) {
+    return 1; // private address → not unique
+  }
+
+  // Public IPs from ISPs (dynamic or CG-NAT → average uniqueness)
+  const dynamicIPRegex = /^(80|81|82|83|84|85|86|87|88|89|90|91|92|93|94|95|151|152|153|154|155|156|157|158|159)\./;
+  if (dynamicIPRegex.test(ip)) {
+    return 3;
+  }
+
+  // Others public IPs addresses (Datacenter, Cloud, etc. → more unique)
+  return 4;
 }
