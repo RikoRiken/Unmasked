@@ -138,6 +138,19 @@ section {
   opacity: 1;
 }
 
+.tooltip p {
+  margin: 0 0 0.5rem 0;
+}
+
+.tooltip ul {
+  padding-left: 1.2rem;
+  margin: 0;
+}
+
+.tooltip li {
+  margin-bottom: 0.3rem;
+}
+
 .hardware-line {
   display: flex;
   justify-content: space-around;
