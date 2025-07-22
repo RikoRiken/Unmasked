@@ -27,11 +27,24 @@ header {
   padding-right: 5%;
 }
 
+.banner-content {
+  display: flex;
+  position: fixed;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #8E7FCB;
+  color:#f0f0f0;
+  font-size: 0.8rem;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 0.5rem;
+  padding-top: 5vh;
 }
 
 button {
@@ -58,7 +71,7 @@ button:hover {
 }
 
 section {
-  padding-bottom: 3vh;
+  padding-bottom: 2vh;
   text-align: center;
 }
 
@@ -104,7 +117,7 @@ section {
   visibility: hidden;
   opacity: 0;
   width: 256px;
-  background: rgba(40, 40, 55, 0.85);
+  background: rgba(40, 40, 55, 0.95);
   color: #eee;
   text-align: left;
   padding: 0.7rem 1rem;
