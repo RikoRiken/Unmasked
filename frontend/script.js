@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
         await getCanvasFingerprint();
         await getWebGLInfo();
         displayScore();
+        updateCommentScore(calculateUniquenessScore());
     });
 });
 
@@ -194,6 +195,22 @@ function calculateUniquenessScore() {
 
   return score;
 }
+function updateCommentScore(score) {
+    const commentScore = document.getElementById("comment-score");
+
+    if (score <= 30) {
+            commentScore.innerText = "Low Uniqueness";
+        }
+        else if (score > 30 && score <= 60) {
+            commentScore.innerText = "Medium Uniqueness";
+        }
+        else if (score > 60 && score <= 90) {
+            commentScore.innerText = "High Uniqueness";
+        }
+        else if (score > 90) {
+            commentScore.innerText = "Very High Uniqueness";
+        }
+}    
 
 function displayScore() {
   const score = calculateUniquenessScore();
