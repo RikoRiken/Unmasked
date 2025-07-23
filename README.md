@@ -6,7 +6,7 @@
 Unmasked is a lightweight web tool that reveals what your browser silently exposes about you. It displays detailed client-side information like your system configuration, screen size, browser fingerprint, and more. 
 </p>
 <p align="center"> 
-The goal: raise awareness about passive tracking and show how unique (and traceable) your digital identity really is.
+The goal: raise awareness about passive tracking and show how unique / traceable your digital identity really is.
 </p>
 
 <br>
