@@ -1,0 +1,198 @@
+<!-- 
+     _   _                           _            _ 
+    | | | |_ __  _ __ ___   __ _ ___| | _____  __| |
+    | | | | '_ \| '_ ` _ \ / _` / __| |/ / _ \/ _` |
+    | |_| | | | | | | | | | (_| \__ \   <  __/ (_| |
+     \___/|_| |_|_| |_| |_|\__,_|___/_|\_\___|\__,_|
+                                                
+Unmasked, a simple web application to discover your fingerprint on websites. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="./styles/scan.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Unmasked – Browser Fingerprint Explorer</title>
+</head>
+
+<body>
+
+    <banner>
+        <div class="banner-content">
+            <p><strong>IMPORTANT:</strong> None of this information is collected or stored; it's only for educational purposes.</p>
+        </div>
+    </banner>
+
+    <header>
+        <div class="navbar">
+            <div>
+                <img src="assets/Unmasked_logo.png" alt="Unmasked Logo" width="192px">
+            </div>
+            <div>
+                <button id="new-scan" class="button">+ NEW SCAN</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="basic-info">
+            <div class="h2">
+                <h2>BASIC INFORMATIONS</h2>
+            </div>
+
+        <div class="info-grid-horizontal">
+            <div class="info-box">
+                <div class="label">IP Address
+                    <div class="tooltip-container">
+                        <img src="assets/info-icon.svg" class="info-icon" alt="Info">
+                        <div class="tooltip">
+                            <p><strong>This is your public IP address, which websites can access when you visit them.</strong></p>
+                                <ul>
+                                    <li>It can reveal your approximate location.</li>
+                                    <li>It can reveal your internet provider.</li>
+                                </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="result" id="ip-address">Loading...</div>
+            </div>
+            <div class="info-box">
+                <div class="label">Language
+                    <div class="tooltip-container">
+                        <img src="assets/info-icon.svg" class="info-icon" alt="Info">
+                        <div class="tooltip">
+                            <p><strong>This is the preferred language your browser shares with websites.</strong></p>
+                                <ul>
+                                    <li>Helps websites display content in the correct language.</li>
+                                    <li>Can also give hints about your regional settings.</li>
+                                </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="result" id="language">Loading...</div>
+            </div>
+            <div class="info-box">
+                <div class="label">Time Zone
+                    <div class="tooltip-container">
+                        <img src="assets/info-icon.svg" class="info-icon" alt="Info">
+                        <div class="tooltip">
+                            <p><strong>This is the time zone configured in your operating system or browser.</strong></p>
+                                <ul>
+                                    <li>Allows websites to adjust content like dates and times to match your local time.</li>
+                                    <li>Can also reveal your location.</li>
+                                </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="result" id="timezone">Loading...</div>
+            </div>
+            
+        </div>
+
+        <div class="info-grid-horizontal">
+            <div class="info-box">
+                <div class="label">User-Agent
+                    <div class="tooltip-container">
+                        <img src="assets/info-icon.svg" class="info-icon" alt="Info">
+                        <div class="tooltip">
+                            <p><strong>The User-Agent is a string your browser sends to websites.</strong></p>
+                                <ul>
+                                    <li>It tells the site which browser and operating system you’re using.</li>
+                                    <li>However, it can also reveal details about your device and software version.</li>
+                                </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="result" id="user-agent">Loading...</div>
+            </div>           
+            <div class="info-box">
+                <div class="label">Device cores & RAM memory
+                    <div class="tooltip-container">
+                        <img src="assets/info-icon.svg" class="info-icon" alt="Info">
+                        <div class="tooltip">
+                            <p>These values show your device’s hardware capabilities.</p>
+                                <ul>
+                                    <li> The number of CPU cores indicates how many tasks your processor can handle.</li>
+                                    <li> The RAM value is an approximation provided by the browser and may be lower than your real device’s memory.</li>
+                                    <li> (Sometimes this value can be inaccurate, a 16GB or + may be reported as 8GB)</li>
+                                </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="hardware-line">
+                    <div class="result" id="hardware-concurrency">Loading...</div>
+                    <div class="result" id="device-memory">Loading...</div>
+                </div>
+            </div>
+        </div>
+
+        </section>
+
+    <section id="fingerprint">
+        <div class="h2">
+            <h2>FINGERPRINTING DETAILS</h2>
+        </div>
+
+        <div class="info-grid-horizontal">
+            <div class="info-box">
+                <div class="label">Canvas Fingerprint
+                    <div class="tooltip-container">
+                        <img src="assets/info-icon.svg" class="info-icon" alt="Info">
+                        <div class="tooltip">
+                            <p><strong>This value is generated by drawing an invisible image in your browser.</strong></p>
+                            <p>The result depends on many subtle factors:</p>
+                                <ul>
+                                    <li>Your graphics card (GPU)</li>
+                                    <li>Your browser and operating system</li>
+                                    <li>Installed fonts and rendering settings</li>
+                                </ul>
+                            <p>It can be used to help uniquely identify your device without using cookies.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="result" id="canvas-fingerprint">Loading...</div>
+                </div>
+            </div>
+        <div class="info-grid-horizontal">
+            <div class="info-box">
+                <div class="label">WebGL Vendor
+                    <div class="tooltip-container">
+                        <img src="assets/info-icon.svg" class="info-icon" alt="Info">
+                        <div class="tooltip">
+                            <p><strong>This is the name of the manufacturer of your graphics card.</strong></p>
+                            <p>This value is often stable and specific to your hardware, which makes it useful to distinguish devices.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="result" id="webgl-vendor">Loading...</div>
+            </div>
+            <div class="info-box">
+                <div class="label">WebGL Renderer
+                    <div class="tooltip-container">
+                        <img src="assets/info-icon.svg" class="info-icon" alt="Info">
+                        <div class="tooltip">
+                            <p><strong>This is the name of the graphics card model or driver used by your system.</strong></p>
+                            <p>Combined with the Vendor, it can help identify your device more precisely.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="result" id="webgl-renderer">Loading...</div>
+            </div>
+        </div>
+        </section>
+
+    <section class="uniqueness-div" id="result">
+      <p><span id="uniqueness-score">Calculating...</span></p>
+      <p id="comment-score"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Made with 🛡️ by <a href="https://github.com/RikoRiken" style="color: #b1a1ed;" target="_blank" rel="noopener noreferrer">RikoRiken</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
