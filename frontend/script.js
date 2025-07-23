@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
         await getWebGLInfo();
         displayScore();
         updateCommentScore(calculateUniquenessScore());
+        updateUniquenessScoreColor(calculateUniquenessScore);
     });
 });
 
@@ -195,20 +196,21 @@ function calculateUniquenessScore() {
 
   return score;
 }
+
 function updateCommentScore(score) {
     const commentScore = document.getElementById("comment-score");
 
     if (score <= 30) {
-            commentScore.innerText = "Low Uniqueness";
+            commentScore.innerHTML = "<strong>Your digital fingerprint is relatively non-unique.</strong><br><br>This means that the technical characteristics of your browser (language, time zone, hardware, etc.) are common among a large number of users.<br><br>In practice, this reduces your traceability on the web: it becomes more difficult for websites or advertising trackers to reliably identify you based solely on this data.<br><br>This level of score suggests you are well-blended into the crowd, which is beneficial for protecting your privacy.";
         }
         else if (score > 30 && score <= 60) {
-            commentScore.innerText = "Medium Uniqueness";
+            commentScore.innerHTML = "<strong>Your digital fingerprint shows a moderate level of uniqueness.</strong><br><br>Some of your browser or device characteristics (like your user agent, time zone, hardware specs, or WebGL details) are less common, making you more distinguishable than the average user, but not highly trackable.<br><br>In summary, you are somewhat unique in the digital crowd, which can help protect your privacy while still allowing for some level of tracking.<br>While you're not fully anonymous, you're also not standing out too much. This means websites could potentially recognize your setup over time, but it would still be challenging to track you precisely without additional identifiers.<br><br>This is a balanced state: you’re neither too exposed nor too hidden in the digital crowd.";
         }
         else if (score > 60 && score <= 90) {
-            commentScore.innerText = "High Uniqueness";
+            commentScore.innerHTML = "<strong>Your digital fingerprint is fairly unique.</strong><br><br>Several attributes from your browser or device — such as your IP address, canvas fingerprint, WebGL renderer, or hardware specs — are not commonly shared among users.<br>This makes it easier for websites and trackers to identify or recognize you, even without cookies or account logins.<br>If privacy is important to you, consider using tools like browser extensions, private browsing modes, or more privacy-focused browsers to reduce your fingerprintability.<br><br>Right now, your setup is distinct enough to be tracked across sessions by determined actors.";
         }
         else if (score > 90) {
-            commentScore.innerText = "Very High Uniqueness";
+            commentScore.innerHTML = "<strong>Your digital fingerprint is highly unique.</strong><br><br>The combination of your browser, device, and network characteristics makes you stand out significantly among users.<br>This means that websites, advertisers, or trackers can very easily recognize and follow your activity, even if you clear cookies or use private mode.<br>A fingerprint this distinctive allows for persistent tracking across sessions and websites, sometimes even across different tabs or incognito windows.<br><br>For stronger anonymity, you might consider using fingerprint randomization tools, Tor Browser, or privacy-oriented OS setups that limit identifiable traits.";
         }
 }    
 
