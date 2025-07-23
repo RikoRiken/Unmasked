@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/Unmasked_logo.png" width="392px">
+  <img src="./docs/assets/Unmasked_logo.png" width="392px">
 </p>
 
 <p align="center">
@@ -12,8 +12,8 @@ The goal: raise awareness about passive tracking and show how unique / traceable
 <br>
 
 <p align="center">
-  <a href="https://github.com/RikoRiken" >
-    <img src="./assets/Unmasked_button.png" width="256px">
+  <a href="https://rikoriken.github.io/Unmasked/" >
+    <img src="./docs/assets/Unmasked_button.png" width="256px">
   </a>
 </p>
 
