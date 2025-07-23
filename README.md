@@ -12,7 +12,7 @@ The goal: raise awareness about passive tracking and show how unique (and tracea
 <br>
 
 <p align="center">
-  <a href="https://github.com/RikoRiken" >
+  <a href="https://rikoriken.github.io/Unmasked/" >
     <img src="./assets/Unmasked_button.png" width="256px">
   </a>
 </p>
