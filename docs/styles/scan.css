@@ -48,7 +48,7 @@ header {
   padding-top: 5vh;
 }
 
-button {
+.new-scan-btn {
   background-color: #9e8ce2;
   color: #f0f0f0;
   border: none;
@@ -59,9 +59,8 @@ button {
   font-size: 1rem;
 }
 
-button:hover {
-  background-color: #8E7FCB
-;
+.new-scan-btn:hover {
+  background-color: #8E7FCB;
 }
 
 .h2 {
