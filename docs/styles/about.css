@@ -11,18 +11,69 @@ body {
     text-align: center;
 }
 
+.logo {
+    width: 256px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
 header {
   margin-top: 5vh;
 }
 
+.banner-content {
+  display: flex;
+  position: fixed;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+    top: 0;
+    left: 0;
+  flex-direction: column;
+  background-color: #8E7FCB;
+  color:#f0f0f0;
+  font-size: 0.8rem;
+  z-index: 1;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+    color: #d0d0d0;
+}
+
+.intro {
+    font-size: 1.1rem;
+    color: #d0d0d0;
+    margin-bottom: 3rem;
+    line-height: 1.5rem;
+    font-weight: 300;
+}
+
+.cta-button {
+    background-color: #9e8ce2;
+    color: #f0f0f0;
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    font-size: 1.3rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #8E7FCB;
+}
+
 .explanation-grid {
     display: grid;
-    grid-template-columns: 1fr 2fr; /* Ratio 1/3 - 2/3 */
+    grid-template-columns: 1fr 2fr; 
     gap: 1rem;
     margin-bottom: 2.5rem;
     align-items: start;
     padding-top: 2rem;
-    border-top: 2px solid #333;
+    border-top: 2px solid #222;
     margin-left: 8%;
     margin-right: 8%;
 }
@@ -35,9 +86,9 @@ header {
 }
 
 .description {
-    color: #888;
+    color: #999;
     font-weight: 300;
-    font-size: 1.1rem;
+    font-size: 1rem;
     text-align: left;
     line-height: 1.5rem;
 }
