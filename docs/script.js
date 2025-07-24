@@ -8,22 +8,48 @@
 Unmasked, a simple web application to discover your fingerprint on websites. */
 
 document.addEventListener("DOMContentLoaded", () => {
-    const button = document.getElementById("new-scan");
+  runScan();
 
-    button.addEventListener("click", async () => {
-        await getIPAddress();
-        getUserAgent();
-        getLanguage();
-        getTimezone();
-        getHardwareConcurrency();
-        getDeviceMemory();
-        await getCanvasFingerprint();
-        await getWebGLInfo();
-        displayScore();
-        updateCommentScore(calculateUniquenessScore());
-        updateUniquenessScoreColor(calculateUniquenessScore);
+  const newScanBtn = document.getElementById("new-scan-btn");
+  if (newScanBtn) {
+    newScanBtn.addEventListener("click", () => {
+      clearResults(); 
+      runScan();      
     });
+  }
 });
+
+async function runScan() {
+  await getIPAddress();
+  getUserAgent();
+  getLanguage();
+  getTimezone();
+  getHardwareConcurrency();
+  getDeviceMemory();
+  await getCanvasFingerprint();
+  await getWebGLInfo();
+  displayScore();
+  updateCommentScore(calculateUniquenessScore());
+  updateUniquenessScoreColor(calculateUniquenessScore());
+}
+
+function clearResults() {
+  const outputFields = document.querySelectorAll(".output-field");
+  outputFields.forEach(el => {
+    el.innerText = "";
+  });
+    document.getElementById("user-agent").innerText = "";
+    document.getElementById("language").innerText = "";  
+    document.getElementById("timezone").innerText = "";
+    document.getElementById("ip-address").innerText = "";
+    document.getElementById("hardware-concurrency").innerText = "";
+    document.getElementById("device-memory").innerText = "";
+    document.getElementById("canvas-fingerprint").innerText = "";
+    document.getElementById("webgl-vendor").innerText = "";
+    document.getElementById("webgl-renderer").innerText = "";
+    document.getElementById("uniqueness-score").innerText = "";
+    document.getElementById("comment-score").innerText = "";
+}
 
 function getUserAgent() {
   const userAgent = navigator.userAgent;
