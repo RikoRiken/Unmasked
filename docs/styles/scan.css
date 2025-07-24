@@ -8,7 +8,7 @@
 Unmasked, a simple web application to discover your fingerprint on websites. */
 
 body {
-  font-family: 'segoe-ui', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "segoe-ui", sans-serif;
   font-size: 1rem;
   line-height: 1.6;
   margin: 0;
