@@ -134,6 +134,7 @@
                 <li>Some machines use integrated graphics (e.g., Intel), while others use dedicated ones (e.g., NVIDIA, AMD).</li>
                 <li>Apple devices often report "Apple Inc." or specific Apple GPUs.</li>
             </ul>
+            </p>
         </div>
     </div>
 
@@ -146,11 +147,94 @@
                 <li>If you're using virtualization, emulation, or non-standard drivers, this value may be even more distinctive.</li>
                 <li>Combined with the WebGL Vendor and other fingerprinting metrics, this adds to a more complete device profile.</li>
             </ul>
+            </p>
         </div>
     </div>
 
     <h2>Uniqueness Score Concept</h2>
+    <section class="uniqueness-score-section">
+        <div class="div-67-percent">
+            <p>The Uniqueness Score is a numerical representation of how identifiable or trackable your browser and device are based on technical information exposed to websites.<br><br>It ranges from <b>0 to 100</b>, where:</p>
+            <ul>
+                <li><b>0-30</b> means <b>low uniqueness</b>: many users share the same traits.</li>
+                <li><b>30-60</b> means <b>moderate uniqueness</b>: some identifying elements stand out.</li>
+                <li><b>60-90</b> means <b>high uniqueness</b>: your device is more easily recognizable.</li>
+                <li><b>90-100</b> means very <b>high uniqueness</b>: your device is likely unique among most users.</li>
+            </ul>
+        </p>
+        <section id="score-calculation">
+            <h3>How is the score calculated?</h3>
+            <p>The score is based on a set of <strong>fingerprinting attributes</strong> collected from your browser and device using JavaScript and browser APIs.</p>
+            <p>Each attribute is assigned a <strong>weight</strong> depending on how identifying or unique it tends to be. The more rare or stable a value is across sessions or users, the <strong>more it contributes</strong> to your score.</p>
 
+            <h3>Example of attributes and weights:</h3>
+            <table>
+                <thead>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Description</th>
+                    <th>Weight</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>IP Address</td>
+                    <td>Public-facing network identifier</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td>Language</td>
+                    <td>Preferred language of the user</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>Timezone</td>
+                    <td>Local time offset</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>User-Agent</td>
+                    <td>Browser and OS information</td>
+                    <td>15</td>
+                </tr>
+                <tr>
+                    <td>Hardware Concurrency</td>
+                    <td>Number of logical CPU cores</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>Device Memory</td>
+                    <td>Reported RAM size in GB</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>WebGL Vendor</td>
+                    <td>Graphics vendor name</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>WebGL Renderer</td>
+                    <td>GPU model or rendering backend</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>Canvas Fingerprint</td>
+                    <td>Image rendering hash</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td>Screen Resolution</td>
+                    <td>Width x Height and pixel ratio</td>
+                    <td>5</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <p><em>Note:</em> These weights are illustrative, and your implementation may assign different values depending on how precise or invasive the metric is.</p>
+    </section>
+
+        </div>
+    </section>
 
   <footer>
     <p>© 2025 Unmasked. Made with 🛡️ by <a href="https://github.com/RikoRiken" style="color: #4d4d76;" target="_blank" rel="noopener noreferrer">RikoRiken</a></p>
