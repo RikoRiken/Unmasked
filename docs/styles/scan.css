@@ -201,7 +201,8 @@ main {
 
 footer {
   text-align: center;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   padding-bottom: 3%;
   padding-top: 5vh;
+  color: #4d4d76;
 }
