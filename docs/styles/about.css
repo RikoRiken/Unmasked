@@ -18,7 +18,11 @@ body {
 }
 
 header {
-  margin-top: 5vh;
+    margin-top: 5vh;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .banner-content {
@@ -49,6 +53,7 @@ h2 {
     margin-bottom: 3rem;
     line-height: 1.5rem;
     font-weight: 300;
+    width: 67%;
 }
 
 .cta-button {
