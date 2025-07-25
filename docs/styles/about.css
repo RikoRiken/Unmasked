@@ -48,6 +48,10 @@ h2 {
     color: #f0f0f0;
 }
 
+h3 {
+    font-size: 1.5rem;
+    margin-top: 4rem;
+}
 .intro {
     font-size: 1.1rem;
     color: #d0d0d0;
@@ -98,6 +102,79 @@ h2 {
     text-align: left;
     line-height: 1.5rem;
 }
+
+.uniqueness-score-section {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    padding: 1rem;
+    align-items: center;
+    padding-left: 15vw;
+    padding-right: 15vw;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+.div-67-percent {
+    padding: 1rem;
+    text-align: left;
+    color: #d0d0d0;
+    font-weight: 300;
+    font-size: 1rem;
+    text-align: left;
+    line-height: 1.5rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem auto;
+  background-color: #2a2a3d;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+thead {
+  background-color: #373754;
+}
+
+th, td {
+  padding: 1rem;
+  text-align: left;
+  font-size: 0.95rem;
+  border-bottom: 1px solid #3f3f5a;
+}
+
+th {
+  font-weight: 600;
+  color: #9e8ce2;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+}
+
+td {
+  color: #d0d0d0;
+  font-weight: 300;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #242437;
+}
+
+tbody tr:hover {
+  background-color: #3b3b5c;
+  transition: background-color 0.2s ease-in-out;
+}
+
+caption {
+  caption-side: top;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #9e8ce2;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
 
 footer {
   margin-top: auto;
