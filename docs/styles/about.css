@@ -2,8 +2,9 @@ body {
     margin: 0;
     padding: 0;
     font-family: "Segoe UI", sans-serif;
-    background: linear-gradient(145deg, #0f0f0f, #1e1e1e);
-    background-color: #0f0f0f;
+    background: linear-gradient(135deg, #1e1e2f, #2c2c3e, #1e1e2f);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
     color: #f4f4f4;
     display: flex;
     flex-direction: column;
@@ -44,7 +45,7 @@ h2 {
     font-size: 2.5rem;
     margin-top: 5rem;
     margin-bottom: 2rem;
-    color: #d0d0d0;
+    color: #f0f0f0;
 }
 
 .intro {
@@ -78,7 +79,7 @@ h2 {
     margin-bottom: 2.5rem;
     align-items: start;
     padding-top: 2rem;
-    border-top: 2px solid #222;
+    border-top: 2px solid #373754;
     margin-left: 8%;
     margin-right: 8%;
 }
@@ -91,7 +92,7 @@ h2 {
 }
 
 .description {
-    color: #999;
+    color: #d0d0d0;
     font-weight: 300;
     font-size: 1rem;
     text-align: left;
