@@ -109,21 +109,30 @@
     <div class="explanation-grid">
         <div class="label">Canvas Fingerprint</div>
         <div class="description">
-            <p> hardwareConcurrency is a JavaScript API that reveals the number of logical CPU threads your device can use in parallel. This includes physical cores and hyper-threaded virtual cores, giving a more precise insight into your system’s parallel processing power.<br><br>For example:
+            <p> The Canvas API is a powerful browser feature used to draw shapes, images, or text directly in your browser — often for animations, charts, or visual effects. But it can also be used to generate a fingerprint of your device.<br><br>How does it work?
             <ul>
-                <li>A quad-core CPU with hyper-threading may report 8 threads.</li>
-                <li>A low-end phone might show only 2 or 4.</li>
+                <li>Your browser is asked to render a specific image or text on a hidden canvas element.</li>
+                <li>The image is then converted into data (a long string of pixels).</li>
+                <li>Even if the drawing looks identical to the human eye, tiny rendering differences emerge based on:</li>
+                    <ul>
+                        <li>Your operating system</li>
+                        <li>Your GPU and drivers</li>
+                        <li>Font rendering techniques</li>
+                    </ul>
             </ul>
+            These tiny differences are enough to generate a unique hash — a kind of digital signature for your device.</p>
         </div>
     </div>
 
     <div class="explanation-grid">
         <div class="label">WebGL Vendor</div>
         <div class="description">
-            <p> hardwareConcurrency is a JavaScript API that reveals the number of logical CPU threads your device can use in parallel. This includes physical cores and hyper-threaded virtual cores, giving a more precise insight into your system’s parallel processing power.<br><br>For example:
+            <p> The WebGL Vendor reveals the graphics card manufacturer or GPU provider that your device uses to render 3D content via WebGL, a browser-based graphics API.<br><br>The WebGL Vendor, especially when combined with other values such as the WebGL Renderer or the Canvas Fingerprint, can contribute to a uniquely identifying fingerprint of your device. Here's why it matters:
+
             <ul>
-                <li>A quad-core CPU with hyper-threading may report 8 threads.</li>
-                <li>A low-end phone might show only 2 or 4.</li>
+                <li>Not all computers use the same GPU.</li>
+                <li>Some machines use integrated graphics (e.g., Intel), while others use dedicated ones (e.g., NVIDIA, AMD).</li>
+                <li>Apple devices often report "Apple Inc." or specific Apple GPUs.</li>
             </ul>
         </div>
     </div>
@@ -131,10 +140,11 @@
     <div class="explanation-grid">
         <div class="label">WebGL Renderer</div>
         <div class="description">
-            <p> hardwareConcurrency is a JavaScript API that reveals the number of logical CPU threads your device can use in parallel. This includes physical cores and hyper-threaded virtual cores, giving a more precise insight into your system’s parallel processing power.<br><br>For example:
+            <p> The WebGL Renderer provides more detailed information about the specific graphics processor your device uses to render 3D content in the browser. It typically shows the GPU model and sometimes additional driver or rendering engine details.<br><br>The WebGL Renderer gives away precise hardware information that can significantly increase your uniqueness online:
             <ul>
-                <li>A quad-core CPU with hyper-threading may report 8 threads.</li>
-                <li>A low-end phone might show only 2 or 4.</li>
+                <li>The GPU model and rendering backend can vary widely from device to device.</li>
+                <li>If you're using virtualization, emulation, or non-standard drivers, this value may be even more distinctive.</li>
+                <li>Combined with the WebGL Vendor and other fingerprinting metrics, this adds to a more complete device profile.</li>
             </ul>
         </div>
     </div>
@@ -143,7 +153,7 @@
 
 
   <footer>
-    <p>© 2025 Unmasked. Made with 🛡️ by <a href="https://github.com/RikoRiken" style="color: #555;" target="_blank" rel="noopener noreferrer">RikoRiken</a></p>
+    <p>© 2025 Unmasked. Made with 🛡️ by <a href="https://github.com/RikoRiken" style="color: #4d4d76;" target="_blank" rel="noopener noreferrer">RikoRiken</a></p>
   </footer>
 </body>
 </html>
