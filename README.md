@@ -54,3 +54,17 @@ Originally created as a learning project to explore JavaScript, browser APIs, an
 <br>
 
 ## Demonstration
+
+1. <b>Simple utilisation of the scan process</b>
+
+https://github.com/user-attachments/assets/882246d6-f178-473e-87a4-5e769a976fe9
+
+<br>
+
+2. Zoom on <b>Basic Informations & Fingerprinting details</b>
+
+<img src="./docs/assets/Unmasked_Scan-Informations.png">
+
+3. Zoom on <b>Uniqueness Score</b>
+
+<img src="./docs/assets/Unmasked_Uniqueness-Score.png">
