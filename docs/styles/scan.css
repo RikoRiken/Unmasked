@@ -30,7 +30,6 @@ header {
 .banner-content {
   display: flex;
   position: fixed;
-  width: 100vw;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -197,6 +196,7 @@ main {
 
 #comment-score {
   padding-top: 2rem;
+  font-size: 1rem;
 }
 
 .about-btn
@@ -220,9 +220,25 @@ footer {
 }
 
 @media (max-width: 480px) {
+
+  body {
+    font-size: 0.9rem;
+    max-width: 100%;
+  }
   .navbar {
     flex-direction: column;
     align-items: center;
+  }
+
+  .banner-content {
+    position: fixed;
+    text-align: center;
+    top: auto;
+    left: auto;
+    background-color: #8E7FCB;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    font-size: 0.7rem;
   }
 
   .new-scan-btn {
@@ -235,6 +251,17 @@ footer {
   }
 
   .tooltip {
-    width: 90vw;
+    width: 50vw;
+    word-break: normal;
   }
+
+  .info-box {
+    word-break: break-all;
+    overflow-wrap: break-word;
+  }
+
+  #uniqueness-score {
+    font-size: 2.1rem;
+  }
+
 }

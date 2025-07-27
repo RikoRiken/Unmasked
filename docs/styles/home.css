@@ -98,8 +98,12 @@ footer {
         margin-top: 0vh;
     }
 
+    header {
+        margin-top: 0vh;
+    }
+
     .logo {
-        width: 200px;
+        width: 192px;
     }
     .container-100vw {
         flex-direction: column;
