@@ -63,7 +63,7 @@ Originally created as a learning project to explore JavaScript, browser APIs, an
 
 ### 3️⃣ Detailed Insight
 
-A clear information for each data point is given : 
+A clear information for each data point is given (you can check the About page to have more informations): 
 - IP Address
 - Timezone
 - Language
@@ -74,15 +74,44 @@ A clear information for each data point is given :
 - Canvas Fingerprint
 <br>
 
-### 4️⃣ Informative “About” Page
-
-- ✅ Educates users on browser fingerprinting risks
-- ✅ Offers detailed documentation of each fingerprinting technique
-<br>
-
 ## Utilisation
 
+### 🚦 Step-by-Step Guide
+
 <br>
+
+**1. Go to the HomePage**
+
+Visit the landing page of the application via  <a href="https://rikoriken.github.io/Unmasked/">rikoriken.github.io/Unmasked</a>
+
+<br>
+
+**2. Launch a Scan**
+
+Click on the **“Start Scan”** button to open the scanning page.
+
+<br>
+
+**3. Wait a few seconds**
+
+The app will automatically analyze your browser and device fingerprint.
+No action is required, results load instantly.
+
+<br>
+
+**4. Explore the details**
+
+You can explore all the data points, and read your Uniqueness Score, a score between **0 and 100** will appear, indicating how unique your fingerprint is.
+→ _Lower score_ = less unique (better for privacy).
+→ _Higher score_ = more unique (easier to track).
+
+<br>
+
+**5. Run another scan**
+
+Click **“New Scan”** to refresh the results and see if your fingerprint changes _(e.g., with a VPN or browser extension)_.
+
+
 <br>
 
 ## Demonstration
