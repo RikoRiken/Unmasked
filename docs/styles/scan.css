@@ -218,3 +218,23 @@ footer {
   padding-top: 5vh;
   color: #4d4d76;
 }
+
+@media (max-width: 480px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .new-scan-btn {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .info-grid-horizontal {
+    grid-template-columns: 1fr;
+  }
+
+  .tooltip {
+    width: 90vw;
+  }
+}
