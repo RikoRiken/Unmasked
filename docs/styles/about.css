@@ -189,7 +189,7 @@ footer {
 
   body {
     font-size: 0.9rem;
-    max-width: 100%;
+    max-width: 100vw;
     word-break: normal;
   }
 
@@ -231,8 +231,13 @@ footer {
   }
 
   .uniqueness-score-section {
-    padding-left: 5vw;
-    padding-right: 5vw;
+    padding-left: 15%;
+    padding-right: 15%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
   }
   .div-67-percent {
     padding: 1rem;
@@ -245,6 +250,7 @@ footer {
   }
   th, td {
     padding: 0.8rem;
+    font-size: 0.8rem;
   }
   .cta-button {
     font-size: 1rem;
