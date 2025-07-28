@@ -37,6 +37,7 @@ header {
   color:#f0f0f0;
   font-size: 0.8rem;
   z-index: 1;
+  width: 100vw;
 }
 
 .navbar {
@@ -223,7 +224,7 @@ footer {
 
   body {
     font-size: 0.9rem;
-    max-width: 100%;
+    max-width: 100vw;
   }
   .navbar {
     flex-direction: column;
@@ -231,14 +232,15 @@ footer {
   }
 
   .banner-content {
-    position: fixed;
     text-align: center;
     top: auto;
-    left: auto;
+    left: 0;
+    right: 0;
     background-color: #8E7FCB;
     padding-left: 2rem;
     padding-right: 2rem;
     font-size: 0.7rem;
+    width: 100vw;
   }
 
   .new-scan-btn {
