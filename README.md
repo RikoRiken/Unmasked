@@ -38,7 +38,7 @@ Originally created as a learning project to explore JavaScript, browser APIs, an
 
 <br>
 
-<p align="center">You can check the application at this address : <a href="https://rikoriken.github.io/Unmasked/">rikoriken.github.io/Unmasked</a></p>
+<p align="center"><b>You can check the application at this address : <a href="https://rikoriken.github.io/Unmasked/">rikoriken.github.io/Unmasked</a></b></p>
 
 <br>
 
