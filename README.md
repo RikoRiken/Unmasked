@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./docs/assets/Unmasked_logo.png" width="392px">
+  <img src="./docs/assets/Unmasked_logo.png" width="256px">
 </p>
 
 <p align="center">
@@ -9,15 +9,11 @@ Unmasked is a lightweight web tool that reveals what your browser silently expos
 The goal: raise awareness about passive tracking and show how unique / traceable your digital identity really is.
 </p>
 
-<br>
-
 <p align="center">
   <a href="https://rikoriken.github.io/Unmasked/" >
     <img src="./docs/assets/readme/Unmasked_button.png" width="256px">
   </a>
 </p>
-
-<br>
 
 <p align="center">
   <a href="#description">Description</a> •
